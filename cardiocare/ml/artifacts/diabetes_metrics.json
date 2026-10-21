@@ -1,0 +1,77 @@
+{
+  "model_name": "LightGBM Production Pipeline",
+  "target": "diabetes",
+  "training_samples": 76902,
+  "test_samples": 19226,
+  "trained_timestamp": "2026-10-15T04:54:25.236559+00:00",
+  "test_metrics": {
+    "roc_auc": 0.9768493734460602,
+    "pr_auc": 0.8803043084868786,
+    "f1_score": 0.810719131614654,
+    "recall": 0.7045990566037735,
+    "precision": 0.9544728434504792,
+    "accuracy": 0.9709768022469573
+  },
+  "feature_importances": [
+    {
+      "Feature": "age",
+      "Importance": 1280
+    },
+    {
+      "Feature": "bmi",
+      "Importance": 1064
+    },
+    {
+      "Feature": "Glycemic_Index",
+      "Importance": 687
+    },
+    {
+      "Feature": "HbA1c_level",
+      "Importance": 474
+    },
+    {
+      "Feature": "blood_glucose_level",
+      "Importance": 315
+    },
+    {
+      "Feature": "Cardiometabolic_Risk",
+      "Importance": 157
+    },
+    {
+      "Feature": "gender_Male",
+      "Importance": 68
+    },
+    {
+      "Feature": "smoking_history_never",
+      "Importance": 54
+    },
+    {
+      "Feature": "smoking_history_former",
+      "Importance": 38
+    },
+    {
+      "Feature": "heart_disease_1",
+      "Importance": 33
+    },
+    {
+      "Feature": "hypertension_1",
+      "Importance": 31
+    },
+    {
+      "Feature": "smoking_history_ever",
+      "Importance": 24
+    },
+    {
+      "Feature": "smoking_history_current",
+      "Importance": 21
+    },
+    {
+      "Feature": "smoking_history_not current",
+      "Importance": 20
+    },
+    {
+      "Feature": "Age_Group_Young_Adult",
+      "Importance": 15
+    }
+  ]
+}

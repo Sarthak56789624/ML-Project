@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./cardiocare
+      dockerfile: backend/Dockerfile
+    container_name: cardiocare-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:80,http://127.0.0.1:5173,*
+      - DATABASE_URL=sqlite+aiosqlite:///./cardiocare.db
+      - RATE_LIMIT_DEFAULT=120/minute
+    volumes:
+      - cardiocare-db-data:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./cardiocare/frontend
+      dockerfile: Dockerfile
+    container_name: cardiocare-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  cardiocare-db-data:

@@ -1,0 +1,2523 @@
+{
+  "metadata": {
+    "exported_at": "2026-10-13T18:57:35.870547+00:00",
+    "sklearn_version": "1.9.0",
+    "python_version": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "dataset_rows": 1985,
+    "random_state": 42,
+    "synthetic_data_note": "Dataset exhibits high separability and near-uniform demographic distributions characteristic of synthetic data. Intended for clinical demonstration and screening support, not definitive diagnosis."
+  },
+  "models": {
+    "model_full": {
+      "version": "1.0.0",
+      "model_type": "GradientBoostingClassifier (Full)",
+      "trained_at": "2026-10-13T18:56:42.312487+00:00",
+      "requires_bp_history": true,
+      "features": [
+        "Age",
+        "Salt_Intake",
+        "Stress_Score",
+        "Sleep_Duration",
+        "BMI",
+        "Lifestyle_Risk_Score",
+        "BP_History",
+        "Medication",
+        "Family_History",
+        "Smoking_Status",
+        "BMI_Category",
+        "Age_Group",
+        "High_Stress"
+      ],
+      "best_params": {
+        "subsample": 0.7,
+        "n_estimators": 300,
+        "min_samples_leaf": 5,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "metrics": {
+        "accuracy": 0.995,
+        "precision": 1.0,
+        "recall": 0.9903,
+        "f1": 0.9951,
+        "roc_auc": 0.9994
+      },
+      "confusion_matrix": [
+        [
+          191,
+          0
+        ],
+        [
+          2,
+          204
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0,
+          "threshold": 0.0
+        },
+        {
+          "fpr": 0.0,
+          "tpr": 0.0049,
+          "threshold": 1.0
+        },
+        {
+          "fpr": 0.0,
+          "tpr": 0.9951,
+          "threshold": 0.445
+        },
+        {
+          "fpr": 0.1204,
+          "tpr": 0.9951,
+          "threshold": 0.0737
+        },
+        {
+          "fpr": 0.1204,
+          "tpr": 1.0,
+          "threshold": 0.0719
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0,
+          "threshold": 0.0
+        }
+      ],
+      "pr_curve": [
+        {
+          "precision": 0.5189,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5269,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5351,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5435,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5523,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5613,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5706,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5803,
+          "recall": 1.0,
+          "threshold": 0.0
+        },
+        {
+          "precision": 0.5903,
+          "recall": 1.0,
+          "threshold": 0.0001
+        },
+        {
+          "precision": 0.6006,
+          "recall": 1.0,
+          "threshold": 0.0001
+        },
+        {
+          "precision": 0.6113,
+          "recall": 1.0,
+          "threshold": 0.0001
+        },
+        {
+          "precision": 0.6224,
+          "recall": 1.0,
+          "threshold": 0.0001
+        },
+        {
+          "precision": 0.6338,
+          "recall": 1.0,
+          "threshold": 0.0001
+        },
+        {
+          "precision": 0.6458,
+          "recall": 1.0,
+          "threshold": 0.0002
+        },
+        {
+          "precision": 0.6581,
+          "recall": 1.0,
+          "threshold": 0.0002
+        },
+        {
+          "precision": 0.671,
+          "recall": 1.0,
+          "threshold": 0.0006
+        },
+        {
+          "precision": 0.6844,
+          "recall": 1.0,
+          "threshold": 0.0008
+        },
+        {
+          "precision": 0.6983,
+          "recall": 1.0,
+          "threshold": 0.0121
+        },
+        {
+          "precision": 0.7128,
+          "recall": 1.0,
+          "threshold": 0.0164
+        },
+        {
+          "precision": 0.7279,
+          "recall": 1.0,
+          "threshold": 0.0178
+        },
+        {
+          "precision": 0.7437,
+          "recall": 1.0,
+          "threshold": 0.021
+        },
+        {
+          "precision": 0.7601,
+          "recall": 1.0,
+          "threshold": 0.0233
+        },
+        {
+          "precision": 0.7774,
+          "recall": 1.0,
+          "threshold": 0.0255
+        },
+        {
+          "precision": 0.7954,
+          "recall": 1.0,
+          "threshold": 0.0304
+        },
+        {
+          "precision": 0.8142,
+          "recall": 1.0,
+          "threshold": 0.0327
+        },
+        {
+          "precision": 0.834,
+          "recall": 1.0,
+          "threshold": 0.039
+        },
+        {
+          "precision": 0.8548,
+          "recall": 1.0,
+          "threshold": 0.0438
+        },
+        {
+          "precision": 0.8766,
+          "recall": 1.0,
+          "threshold": 0.0542
+        },
+        {
+          "precision": 0.8996,
+          "recall": 1.0,
+          "threshold": 0.0719
+        },
+        {
+          "precision": 0.9193,
+          "recall": 0.9951,
+          "threshold": 0.0791
+        },
+        {
+          "precision": 0.9447,
+          "recall": 0.9951,
+          "threshold": 0.1544
+        },
+        {
+          "precision": 0.9716,
+          "recall": 0.9951,
+          "threshold": 0.2608
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.9951,
+          "threshold": 0.445
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.966,
+          "threshold": 0.7513
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.9369,
+          "threshold": 0.8831
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.9078,
+          "threshold": 0.9054
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.8786,
+          "threshold": 0.9266
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.8495,
+          "threshold": 0.9367
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.8204,
+          "threshold": 0.9467
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.7913,
+          "threshold": 0.9511
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.7621,
+          "threshold": 0.9567
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.733,
+          "threshold": 0.9631
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.7039,
+          "threshold": 0.9667
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6748,
+          "threshold": 0.9688
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6456,
+          "threshold": 0.971
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6165,
+          "threshold": 0.9734
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5874,
+          "threshold": 0.9788
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5583,
+          "threshold": 0.9836
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5291,
+          "threshold": 0.9946
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5,
+          "threshold": 0.9975
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4709,
+          "threshold": 0.9985
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4417,
+          "threshold": 0.9989
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4126,
+          "threshold": 0.9993
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3835,
+          "threshold": 0.9996
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3544,
+          "threshold": 0.9997
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3252,
+          "threshold": 0.9998
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2961,
+          "threshold": 0.9999
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.267,
+          "threshold": 0.9999
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2379,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2087,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1796,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1505,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1214,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0922,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0631,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.034,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0049,
+          "threshold": 1.0
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0,
+          "threshold": 1.0
+        }
+      ],
+      "threshold_table": [
+        {
+          "threshold": 0.1,
+          "accuracy": 0.9597,
+          "precision": 0.9318,
+          "recall": 0.9951,
+          "f1": 0.9624
+        },
+        {
+          "threshold": 0.15,
+          "accuracy": 0.9673,
+          "precision": 0.9447,
+          "recall": 0.9951,
+          "f1": 0.9693
+        },
+        {
+          "threshold": 0.2,
+          "accuracy": 0.9798,
+          "precision": 0.967,
+          "recall": 0.9951,
+          "f1": 0.9809
+        },
+        {
+          "threshold": 0.25,
+          "accuracy": 0.9824,
+          "precision": 0.9716,
+          "recall": 0.9951,
+          "f1": 0.9832
+        },
+        {
+          "threshold": 0.3,
+          "accuracy": 0.9849,
+          "precision": 0.9762,
+          "recall": 0.9951,
+          "f1": 0.9856
+        },
+        {
+          "threshold": 0.35,
+          "accuracy": 0.9874,
+          "precision": 0.9809,
+          "recall": 0.9951,
+          "f1": 0.988
+        },
+        {
+          "threshold": 0.4,
+          "accuracy": 0.9924,
+          "precision": 0.9903,
+          "recall": 0.9951,
+          "f1": 0.9927
+        },
+        {
+          "threshold": 0.45,
+          "accuracy": 0.995,
+          "precision": 1.0,
+          "recall": 0.9903,
+          "f1": 0.9951
+        },
+        {
+          "threshold": 0.5,
+          "accuracy": 0.995,
+          "precision": 1.0,
+          "recall": 0.9903,
+          "f1": 0.9951
+        },
+        {
+          "threshold": 0.55,
+          "accuracy": 0.995,
+          "precision": 1.0,
+          "recall": 0.9903,
+          "f1": 0.9951
+        },
+        {
+          "threshold": 0.6,
+          "accuracy": 0.9924,
+          "precision": 1.0,
+          "recall": 0.9854,
+          "f1": 0.9927
+        },
+        {
+          "threshold": 0.65,
+          "accuracy": 0.9899,
+          "precision": 1.0,
+          "recall": 0.9806,
+          "f1": 0.9902
+        },
+        {
+          "threshold": 0.7,
+          "accuracy": 0.9849,
+          "precision": 1.0,
+          "recall": 0.9709,
+          "f1": 0.9852
+        },
+        {
+          "threshold": 0.75,
+          "accuracy": 0.9824,
+          "precision": 1.0,
+          "recall": 0.966,
+          "f1": 0.9827
+        },
+        {
+          "threshold": 0.8,
+          "accuracy": 0.9773,
+          "precision": 1.0,
+          "recall": 0.9563,
+          "f1": 0.9777
+        },
+        {
+          "threshold": 0.85,
+          "accuracy": 0.9723,
+          "precision": 1.0,
+          "recall": 0.9466,
+          "f1": 0.9726
+        },
+        {
+          "threshold": 0.9,
+          "accuracy": 0.9622,
+          "precision": 1.0,
+          "recall": 0.9272,
+          "f1": 0.9622
+        }
+      ],
+      "permutation_importances": [
+        {
+          "feature": "BP_History",
+          "importance": 0.1951,
+          "std": 0.0142
+        },
+        {
+          "feature": "Family_History",
+          "importance": 0.0711,
+          "std": 0.005
+        },
+        {
+          "feature": "Age",
+          "importance": 0.0644,
+          "std": 0.0042
+        },
+        {
+          "feature": "Smoking_Status",
+          "importance": 0.0504,
+          "std": 0.0069
+        },
+        {
+          "feature": "Stress_Score",
+          "importance": 0.0376,
+          "std": 0.0021
+        },
+        {
+          "feature": "Salt_Intake",
+          "importance": 0.0358,
+          "std": 0.0047
+        },
+        {
+          "feature": "Sleep_Duration",
+          "importance": 0.0335,
+          "std": 0.0046
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.0173,
+          "std": 0.0045
+        },
+        {
+          "feature": "BMI_Category",
+          "importance": 0.0007,
+          "std": 0.0004
+        },
+        {
+          "feature": "Medication",
+          "importance": -0.0,
+          "std": 0.0
+        },
+        {
+          "feature": "Age_Group",
+          "importance": 0.0,
+          "std": 0.0001
+        },
+        {
+          "feature": "High_Stress",
+          "importance": 0.0,
+          "std": 0.0001
+        },
+        {
+          "feature": "Lifestyle_Risk_Score",
+          "importance": -0.0001,
+          "std": 0.0001
+        }
+      ],
+      "cv_scores": {
+        "mean_roc_auc": 1.0,
+        "std_roc_auc": 0.0001,
+        "mean_accuracy": 0.9975,
+        "std_accuracy": 0.0013,
+        "mean_recall": 0.9976,
+        "mean_precision": 0.9976,
+        "mean_f1": 0.9976,
+        "fold_roc_auc": [
+          1.0,
+          0.9998,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "model_lifestyle": {
+      "version": "1.0.0",
+      "model_type": "GradientBoostingClassifier (Lifestyle Only)",
+      "trained_at": "2026-10-13T18:56:42.312487+00:00",
+      "requires_bp_history": false,
+      "features": [
+        "Age",
+        "Salt_Intake",
+        "Stress_Score",
+        "Sleep_Duration",
+        "BMI",
+        "Lifestyle_Risk_Score",
+        "Family_History",
+        "Smoking_Status",
+        "BMI_Category",
+        "Age_Group",
+        "Exercise_Level",
+        "High_Stress"
+      ],
+      "best_params": {
+        "subsample": 0.85,
+        "n_estimators": 150,
+        "min_samples_leaf": 1,
+        "max_depth": 2,
+        "learning_rate": 0.05
+      },
+      "metrics": {
+        "accuracy": 0.7733,
+        "precision": 0.7816,
+        "recall": 0.7816,
+        "f1": 0.7816,
+        "roc_auc": 0.8753
+      },
+      "confusion_matrix": [
+        [
+          146,
+          45
+        ],
+        [
+          45,
+          161
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0,
+          "threshold": 0.0
+        },
+        {
+          "fpr": 0.0,
+          "tpr": 0.0049,
+          "threshold": 0.9905
+        },
+        {
+          "fpr": 0.0,
+          "tpr": 0.6893,
+          "threshold": 0.6704
+        },
+        {
+          "fpr": 0.0105,
+          "tpr": 0.6893,
+          "threshold": 0.6652
+        },
+        {
+          "fpr": 0.0105,
+          "tpr": 0.6942,
+          "threshold": 0.6502
+        },
+        {
+          "fpr": 0.0262,
+          "tpr": 0.6942,
+          "threshold": 0.6469
+        },
+        {
+          "fpr": 0.0262,
+          "tpr": 0.699,
+          "threshold": 0.6445
+        },
+        {
+          "fpr": 0.0576,
+          "tpr": 0.699,
+          "threshold": 0.613
+        },
+        {
+          "fpr": 0.0576,
+          "tpr": 0.7039,
+          "threshold": 0.6099
+        },
+        {
+          "fpr": 0.0838,
+          "tpr": 0.7039,
+          "threshold": 0.592
+        },
+        {
+          "fpr": 0.0838,
+          "tpr": 0.7087,
+          "threshold": 0.5895
+        },
+        {
+          "fpr": 0.089,
+          "tpr": 0.7087,
+          "threshold": 0.5878
+        },
+        {
+          "fpr": 0.0942,
+          "tpr": 0.7136,
+          "threshold": 0.5832
+        },
+        {
+          "fpr": 0.0942,
+          "tpr": 0.7282,
+          "threshold": 0.575
+        },
+        {
+          "fpr": 0.1152,
+          "tpr": 0.7282,
+          "threshold": 0.5717
+        },
+        {
+          "fpr": 0.1152,
+          "tpr": 0.733,
+          "threshold": 0.5716
+        },
+        {
+          "fpr": 0.1623,
+          "tpr": 0.733,
+          "threshold": 0.5539
+        },
+        {
+          "fpr": 0.1623,
+          "tpr": 0.7427,
+          "threshold": 0.5494
+        },
+        {
+          "fpr": 0.1675,
+          "tpr": 0.7427,
+          "threshold": 0.5458
+        },
+        {
+          "fpr": 0.1675,
+          "tpr": 0.7621,
+          "threshold": 0.5401
+        },
+        {
+          "fpr": 0.1832,
+          "tpr": 0.7621,
+          "threshold": 0.5355
+        },
+        {
+          "fpr": 0.1832,
+          "tpr": 0.767,
+          "threshold": 0.5306
+        },
+        {
+          "fpr": 0.2094,
+          "tpr": 0.767,
+          "threshold": 0.5172
+        },
+        {
+          "fpr": 0.2094,
+          "tpr": 0.7718,
+          "threshold": 0.513
+        },
+        {
+          "fpr": 0.2251,
+          "tpr": 0.7718,
+          "threshold": 0.5111
+        },
+        {
+          "fpr": 0.2251,
+          "tpr": 0.7767,
+          "threshold": 0.51
+        },
+        {
+          "fpr": 0.2304,
+          "tpr": 0.7767,
+          "threshold": 0.5082
+        },
+        {
+          "fpr": 0.2304,
+          "tpr": 0.7816,
+          "threshold": 0.5032
+        },
+        {
+          "fpr": 0.2513,
+          "tpr": 0.7816,
+          "threshold": 0.4987
+        },
+        {
+          "fpr": 0.2513,
+          "tpr": 0.7864,
+          "threshold": 0.4971
+        },
+        {
+          "fpr": 0.2723,
+          "tpr": 0.7864,
+          "threshold": 0.4945
+        },
+        {
+          "fpr": 0.2723,
+          "tpr": 0.801,
+          "threshold": 0.4911
+        },
+        {
+          "fpr": 0.2775,
+          "tpr": 0.801,
+          "threshold": 0.491
+        },
+        {
+          "fpr": 0.2775,
+          "tpr": 0.8058,
+          "threshold": 0.4892
+        },
+        {
+          "fpr": 0.2827,
+          "tpr": 0.8058,
+          "threshold": 0.4873
+        },
+        {
+          "fpr": 0.2827,
+          "tpr": 0.8107,
+          "threshold": 0.4857
+        },
+        {
+          "fpr": 0.288,
+          "tpr": 0.8107,
+          "threshold": 0.4856
+        },
+        {
+          "fpr": 0.288,
+          "tpr": 0.8155,
+          "threshold": 0.4855
+        },
+        {
+          "fpr": 0.3089,
+          "tpr": 0.8155,
+          "threshold": 0.4796
+        },
+        {
+          "fpr": 0.3089,
+          "tpr": 0.8252,
+          "threshold": 0.4779
+        },
+        {
+          "fpr": 0.3194,
+          "tpr": 0.8252,
+          "threshold": 0.4772
+        },
+        {
+          "fpr": 0.3194,
+          "tpr": 0.8301,
+          "threshold": 0.4766
+        },
+        {
+          "fpr": 0.3613,
+          "tpr": 0.8301,
+          "threshold": 0.4657
+        },
+        {
+          "fpr": 0.3613,
+          "tpr": 0.835,
+          "threshold": 0.4647
+        },
+        {
+          "fpr": 0.3665,
+          "tpr": 0.835,
+          "threshold": 0.4634
+        },
+        {
+          "fpr": 0.3665,
+          "tpr": 0.8398,
+          "threshold": 0.4609
+        },
+        {
+          "fpr": 0.377,
+          "tpr": 0.8398,
+          "threshold": 0.456
+        },
+        {
+          "fpr": 0.377,
+          "tpr": 0.8495,
+          "threshold": 0.454
+        },
+        {
+          "fpr": 0.3927,
+          "tpr": 0.8495,
+          "threshold": 0.4444
+        },
+        {
+          "fpr": 0.3927,
+          "tpr": 0.8544,
+          "threshold": 0.4436
+        },
+        {
+          "fpr": 0.3979,
+          "tpr": 0.8544,
+          "threshold": 0.4401
+        },
+        {
+          "fpr": 0.3979,
+          "tpr": 0.8592,
+          "threshold": 0.4345
+        },
+        {
+          "fpr": 0.4031,
+          "tpr": 0.8641,
+          "threshold": 0.4303
+        },
+        {
+          "fpr": 0.4031,
+          "tpr": 0.8738,
+          "threshold": 0.4202
+        },
+        {
+          "fpr": 0.4084,
+          "tpr": 0.8738,
+          "threshold": 0.4184
+        },
+        {
+          "fpr": 0.4084,
+          "tpr": 0.8835,
+          "threshold": 0.4038
+        },
+        {
+          "fpr": 0.4136,
+          "tpr": 0.8835,
+          "threshold": 0.4034
+        },
+        {
+          "fpr": 0.4136,
+          "tpr": 0.8883,
+          "threshold": 0.4
+        },
+        {
+          "fpr": 0.4555,
+          "tpr": 0.8883,
+          "threshold": 0.3624
+        },
+        {
+          "fpr": 0.4555,
+          "tpr": 0.8932,
+          "threshold": 0.3569
+        },
+        {
+          "fpr": 0.5079,
+          "tpr": 0.8932,
+          "threshold": 0.2895
+        },
+        {
+          "fpr": 0.5079,
+          "tpr": 0.8981,
+          "threshold": 0.2877
+        },
+        {
+          "fpr": 0.5183,
+          "tpr": 0.8981,
+          "threshold": 0.2838
+        },
+        {
+          "fpr": 0.5183,
+          "tpr": 0.9078,
+          "threshold": 0.2687
+        },
+        {
+          "fpr": 0.5759,
+          "tpr": 0.9078,
+          "threshold": 0.2512
+        },
+        {
+          "fpr": 0.5759,
+          "tpr": 0.9126,
+          "threshold": 0.251
+        },
+        {
+          "fpr": 0.5916,
+          "tpr": 0.9126,
+          "threshold": 0.2439
+        },
+        {
+          "fpr": 0.5916,
+          "tpr": 0.9175,
+          "threshold": 0.2421
+        },
+        {
+          "fpr": 0.5969,
+          "tpr": 0.9175,
+          "threshold": 0.2413
+        },
+        {
+          "fpr": 0.5969,
+          "tpr": 0.9272,
+          "threshold": 0.2405
+        },
+        {
+          "fpr": 0.6754,
+          "tpr": 0.9272,
+          "threshold": 0.2331
+        },
+        {
+          "fpr": 0.6754,
+          "tpr": 0.932,
+          "threshold": 0.2316
+        },
+        {
+          "fpr": 0.6806,
+          "tpr": 0.9369,
+          "threshold": 0.2301
+        },
+        {
+          "fpr": 0.7068,
+          "tpr": 0.9369,
+          "threshold": 0.2286
+        },
+        {
+          "fpr": 0.712,
+          "tpr": 0.9466,
+          "threshold": 0.2286
+        },
+        {
+          "fpr": 0.7173,
+          "tpr": 0.9466,
+          "threshold": 0.2278
+        },
+        {
+          "fpr": 0.7173,
+          "tpr": 0.9515,
+          "threshold": 0.2276
+        },
+        {
+          "fpr": 0.7277,
+          "tpr": 0.9515,
+          "threshold": 0.2268
+        },
+        {
+          "fpr": 0.7277,
+          "tpr": 0.9563,
+          "threshold": 0.2255
+        },
+        {
+          "fpr": 0.7382,
+          "tpr": 0.9563,
+          "threshold": 0.2251
+        },
+        {
+          "fpr": 0.7382,
+          "tpr": 0.9612,
+          "threshold": 0.2233
+        },
+        {
+          "fpr": 0.7435,
+          "tpr": 0.9612,
+          "threshold": 0.2222
+        },
+        {
+          "fpr": 0.7435,
+          "tpr": 0.966,
+          "threshold": 0.2213
+        },
+        {
+          "fpr": 0.7487,
+          "tpr": 0.9709,
+          "threshold": 0.2206
+        },
+        {
+          "fpr": 0.7644,
+          "tpr": 0.9709,
+          "threshold": 0.2172
+        },
+        {
+          "fpr": 0.7644,
+          "tpr": 0.9757,
+          "threshold": 0.2161
+        },
+        {
+          "fpr": 0.7801,
+          "tpr": 0.9757,
+          "threshold": 0.2152
+        },
+        {
+          "fpr": 0.7801,
+          "tpr": 0.9806,
+          "threshold": 0.2137
+        },
+        {
+          "fpr": 0.7853,
+          "tpr": 0.9806,
+          "threshold": 0.2132
+        },
+        {
+          "fpr": 0.7853,
+          "tpr": 0.9903,
+          "threshold": 0.2118
+        },
+        {
+          "fpr": 0.8377,
+          "tpr": 0.9903,
+          "threshold": 0.1956
+        },
+        {
+          "fpr": 0.8377,
+          "tpr": 0.9951,
+          "threshold": 0.1954
+        },
+        {
+          "fpr": 0.8534,
+          "tpr": 0.9951,
+          "threshold": 0.1899
+        },
+        {
+          "fpr": 0.8534,
+          "tpr": 1.0,
+          "threshold": 0.1872
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0,
+          "threshold": 0.0836
+        }
+      ],
+      "pr_curve": [
+        {
+          "precision": 0.5189,
+          "recall": 1.0,
+          "threshold": 0.0836
+        },
+        {
+          "precision": 0.5269,
+          "recall": 1.0,
+          "threshold": 0.0939
+        },
+        {
+          "precision": 0.5351,
+          "recall": 1.0,
+          "threshold": 0.0973
+        },
+        {
+          "precision": 0.5435,
+          "recall": 1.0,
+          "threshold": 0.1006
+        },
+        {
+          "precision": 0.5523,
+          "recall": 1.0,
+          "threshold": 0.1569
+        },
+        {
+          "precision": 0.5586,
+          "recall": 0.9951,
+          "threshold": 0.1918
+        },
+        {
+          "precision": 0.5651,
+          "recall": 0.9903,
+          "threshold": 0.2015
+        },
+        {
+          "precision": 0.5746,
+          "recall": 0.9903,
+          "threshold": 0.2116
+        },
+        {
+          "precision": 0.5759,
+          "recall": 0.9757,
+          "threshold": 0.2155
+        },
+        {
+          "precision": 0.5831,
+          "recall": 0.9709,
+          "threshold": 0.2206
+        },
+        {
+          "precision": 0.5863,
+          "recall": 0.9563,
+          "threshold": 0.2255
+        },
+        {
+          "precision": 0.5884,
+          "recall": 0.9369,
+          "threshold": 0.2286
+        },
+        {
+          "precision": 0.5981,
+          "recall": 0.932,
+          "threshold": 0.2316
+        },
+        {
+          "precision": 0.6063,
+          "recall": 0.9272,
+          "threshold": 0.2359
+        },
+        {
+          "precision": 0.6181,
+          "recall": 0.9272,
+          "threshold": 0.2373
+        },
+        {
+          "precision": 0.6238,
+          "recall": 0.9175,
+          "threshold": 0.2413
+        },
+        {
+          "precision": 0.6296,
+          "recall": 0.9078,
+          "threshold": 0.2512
+        },
+        {
+          "precision": 0.6426,
+          "recall": 0.9078,
+          "threshold": 0.2577
+        },
+        {
+          "precision": 0.6526,
+          "recall": 0.9029,
+          "threshold": 0.2756
+        },
+        {
+          "precision": 0.6595,
+          "recall": 0.8932,
+          "threshold": 0.3101
+        },
+        {
+          "precision": 0.674,
+          "recall": 0.8932,
+          "threshold": 0.3316
+        },
+        {
+          "precision": 0.6854,
+          "recall": 0.8883,
+          "threshold": 0.3723
+        },
+        {
+          "precision": 0.6973,
+          "recall": 0.8835,
+          "threshold": 0.4034
+        },
+        {
+          "precision": 0.698,
+          "recall": 0.8641,
+          "threshold": 0.4303
+        },
+        {
+          "precision": 0.7056,
+          "recall": 0.8495,
+          "threshold": 0.451
+        },
+        {
+          "precision": 0.7107,
+          "recall": 0.835,
+          "threshold": 0.4634
+        },
+        {
+          "precision": 0.7246,
+          "recall": 0.8301,
+          "threshold": 0.4688
+        },
+        {
+          "precision": 0.7391,
+          "recall": 0.8252,
+          "threshold": 0.4776
+        },
+        {
+          "precision": 0.75,
+          "recall": 0.8155,
+          "threshold": 0.4847
+        },
+        {
+          "precision": 0.7569,
+          "recall": 0.801,
+          "threshold": 0.491
+        },
+        {
+          "precision": 0.7642,
+          "recall": 0.7864,
+          "threshold": 0.4958
+        },
+        {
+          "precision": 0.7816,
+          "recall": 0.7816,
+          "threshold": 0.5002
+        },
+        {
+          "precision": 0.795,
+          "recall": 0.7718,
+          "threshold": 0.5119
+        },
+        {
+          "precision": 0.8144,
+          "recall": 0.767,
+          "threshold": 0.526
+        },
+        {
+          "precision": 0.8298,
+          "recall": 0.7573,
+          "threshold": 0.5412
+        },
+        {
+          "precision": 0.8297,
+          "recall": 0.733,
+          "threshold": 0.5539
+        },
+        {
+          "precision": 0.858,
+          "recall": 0.733,
+          "threshold": 0.5683
+        },
+        {
+          "precision": 0.8824,
+          "recall": 0.7282,
+          "threshold": 0.5723
+        },
+        {
+          "precision": 0.8957,
+          "recall": 0.7087,
+          "threshold": 0.5878
+        },
+        {
+          "precision": 0.9236,
+          "recall": 0.7039,
+          "threshold": 0.6051
+        },
+        {
+          "precision": 0.9536,
+          "recall": 0.699,
+          "threshold": 0.6207
+        },
+        {
+          "precision": 0.9862,
+          "recall": 0.6942,
+          "threshold": 0.6502
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6748,
+          "threshold": 0.6719
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6456,
+          "threshold": 0.6849
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.6165,
+          "threshold": 0.7111
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5874,
+          "threshold": 0.7165
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5583,
+          "threshold": 0.7246
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5291,
+          "threshold": 0.7409
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.5,
+          "threshold": 0.759
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4709,
+          "threshold": 0.7798
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4417,
+          "threshold": 0.8072
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.4126,
+          "threshold": 0.8174
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3835,
+          "threshold": 0.8232
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3544,
+          "threshold": 0.8342
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.3252,
+          "threshold": 0.842
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2961,
+          "threshold": 0.8517
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.267,
+          "threshold": 0.8592
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2379,
+          "threshold": 0.8751
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.2087,
+          "threshold": 0.8951
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1796,
+          "threshold": 0.9091
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1505,
+          "threshold": 0.923
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.1214,
+          "threshold": 0.9286
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0922,
+          "threshold": 0.9371
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0631,
+          "threshold": 0.9554
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.034,
+          "threshold": 0.9783
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0049,
+          "threshold": 0.9905
+        },
+        {
+          "precision": 1.0,
+          "recall": 0.0,
+          "threshold": 1.0
+        }
+      ],
+      "threshold_table": [
+        {
+          "threshold": 0.1,
+          "accuracy": 0.5642,
+          "precision": 0.5435,
+          "recall": 1.0,
+          "f1": 0.7043
+        },
+        {
+          "threshold": 0.15,
+          "accuracy": 0.5793,
+          "precision": 0.5523,
+          "recall": 1.0,
+          "f1": 0.7116
+        },
+        {
+          "threshold": 0.2,
+          "accuracy": 0.5995,
+          "precision": 0.5651,
+          "recall": 0.9903,
+          "f1": 0.7196
+        },
+        {
+          "threshold": 0.25,
+          "accuracy": 0.6776,
+          "precision": 0.6309,
+          "recall": 0.9126,
+          "f1": 0.746
+        },
+        {
+          "threshold": 0.3,
+          "accuracy": 0.7053,
+          "precision": 0.6595,
+          "recall": 0.8932,
+          "f1": 0.7588
+        },
+        {
+          "threshold": 0.35,
+          "accuracy": 0.7229,
+          "precision": 0.6765,
+          "recall": 0.8932,
+          "f1": 0.7699
+        },
+        {
+          "threshold": 0.4,
+          "accuracy": 0.7406,
+          "precision": 0.6973,
+          "recall": 0.8835,
+          "f1": 0.7794
+        },
+        {
+          "threshold": 0.45,
+          "accuracy": 0.738,
+          "precision": 0.7056,
+          "recall": 0.8495,
+          "f1": 0.7709
+        },
+        {
+          "threshold": 0.5,
+          "accuracy": 0.7733,
+          "precision": 0.7816,
+          "recall": 0.7816,
+          "f1": 0.7816
+        },
+        {
+          "threshold": 0.55,
+          "accuracy": 0.7859,
+          "precision": 0.8306,
+          "recall": 0.7379,
+          "f1": 0.7815
+        },
+        {
+          "threshold": 0.6,
+          "accuracy": 0.8111,
+          "precision": 0.9119,
+          "recall": 0.7039,
+          "f1": 0.7945
+        },
+        {
+          "threshold": 0.65,
+          "accuracy": 0.8363,
+          "precision": 0.9862,
+          "recall": 0.6942,
+          "f1": 0.8148
+        },
+        {
+          "threshold": 0.7,
+          "accuracy": 0.8086,
+          "precision": 1.0,
+          "recall": 0.6311,
+          "f1": 0.7738
+        },
+        {
+          "threshold": 0.75,
+          "accuracy": 0.7481,
+          "precision": 1.0,
+          "recall": 0.5146,
+          "f1": 0.6795
+        },
+        {
+          "threshold": 0.8,
+          "accuracy": 0.7128,
+          "precision": 1.0,
+          "recall": 0.4466,
+          "f1": 0.6174
+        },
+        {
+          "threshold": 0.85,
+          "accuracy": 0.6348,
+          "precision": 1.0,
+          "recall": 0.2961,
+          "f1": 0.4569
+        },
+        {
+          "threshold": 0.9,
+          "accuracy": 0.5844,
+          "precision": 1.0,
+          "recall": 0.199,
+          "f1": 0.332
+        }
+      ],
+      "permutation_importances": [
+        {
+          "feature": "Family_History",
+          "importance": 0.0827,
+          "std": 0.008
+        },
+        {
+          "feature": "Smoking_Status",
+          "importance": 0.076,
+          "std": 0.0165
+        },
+        {
+          "feature": "Age",
+          "importance": 0.0657,
+          "std": 0.0033
+        },
+        {
+          "feature": "Stress_Score",
+          "importance": 0.0599,
+          "std": 0.0057
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.0344,
+          "std": 0.0138
+        },
+        {
+          "feature": "Sleep_Duration",
+          "importance": 0.0339,
+          "std": 0.0101
+        },
+        {
+          "feature": "Salt_Intake",
+          "importance": 0.0213,
+          "std": 0.0063
+        },
+        {
+          "feature": "BMI_Category",
+          "importance": 0.0009,
+          "std": 0.0013
+        },
+        {
+          "feature": "High_Stress",
+          "importance": 0.0007,
+          "std": 0.0003
+        },
+        {
+          "feature": "Age_Group",
+          "importance": -0.0002,
+          "std": 0.0006
+        },
+        {
+          "feature": "Lifestyle_Risk_Score",
+          "importance": -0.0013,
+          "std": 0.0013
+        },
+        {
+          "feature": "Exercise_Level",
+          "importance": -0.0014,
+          "std": 0.0005
+        }
+      ],
+      "cv_scores": {
+        "mean_roc_auc": 0.8497,
+        "std_roc_auc": 0.0155,
+        "mean_accuracy": 0.7462,
+        "std_accuracy": 0.0226,
+        "mean_recall": 0.7651,
+        "mean_precision": 0.7526,
+        "mean_f1": 0.7583,
+        "fold_roc_auc": [
+          0.877,
+          0.8461,
+          0.8525,
+          0.8431,
+          0.8298
+        ]
+      }
+    }
+  },
+  "dataset_stats": {
+    "class_balance": {
+      "positive_count": 1032,
+      "negative_count": 953,
+      "total": 1985,
+      "positive_rate": 0.5199,
+      "negative_rate": 0.4801
+    },
+    "histograms": {
+      "Age": {
+        "bins": [
+          "18.0-24.6",
+          "24.6-31.2",
+          "31.2-37.8",
+          "37.8-44.4",
+          "44.4-51.0",
+          "51.0-57.6",
+          "57.6-64.2",
+          "64.2-70.8",
+          "70.8-77.4",
+          "77.4-84.0"
+        ],
+        "bin_edges": [
+          18.0,
+          24.6,
+          31.2,
+          37.8,
+          44.4,
+          51.0,
+          57.6,
+          64.2,
+          70.8,
+          77.4,
+          84.0
+        ],
+        "total_counts": [
+          220,
+          215,
+          181,
+          214,
+          183,
+          212,
+          187,
+          172,
+          200,
+          201
+        ],
+        "positive_counts": [
+          87,
+          85,
+          73,
+          84,
+          74,
+          136,
+          124,
+          118,
+          126,
+          125
+        ],
+        "negative_counts": [
+          133,
+          130,
+          108,
+          130,
+          109,
+          76,
+          63,
+          54,
+          74,
+          76
+        ],
+        "mean": 50.3411,
+        "median": 50.0,
+        "std": 19.442,
+        "min": 18.0,
+        "max": 84.0
+      },
+      "Salt_Intake": {
+        "bins": [
+          "2.5-3.9",
+          "3.9-5.3",
+          "5.3-6.7",
+          "6.7-8.1",
+          "8.1-9.4",
+          "9.4-10.8",
+          "10.8-12.2",
+          "12.2-13.6",
+          "13.6-15.0",
+          "15.0-16.4"
+        ],
+        "bin_edges": [
+          2.5,
+          3.89,
+          5.28,
+          6.67,
+          8.06,
+          9.45,
+          10.84,
+          12.23,
+          13.62,
+          15.01,
+          16.4
+        ],
+        "total_counts": [
+          20,
+          77,
+          246,
+          466,
+          532,
+          398,
+          188,
+          45,
+          12,
+          1
+        ],
+        "positive_counts": [
+          6,
+          37,
+          127,
+          209,
+          263,
+          227,
+          122,
+          31,
+          9,
+          1
+        ],
+        "negative_counts": [
+          14,
+          40,
+          119,
+          257,
+          269,
+          171,
+          66,
+          14,
+          3,
+          0
+        ],
+        "mean": 8.5317,
+        "median": 8.5,
+        "std": 1.9949,
+        "min": 2.5,
+        "max": 16.4
+      },
+      "Stress_Score": {
+        "bins": [
+          "0.0-1.0",
+          "1.0-2.0",
+          "2.0-3.0",
+          "3.0-4.0",
+          "4.0-5.0",
+          "5.0-6.0",
+          "6.0-7.0",
+          "7.0-8.0",
+          "8.0-9.0",
+          "9.0-10.0"
+        ],
+        "bin_edges": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0
+        ],
+        "total_counts": [
+          176,
+          195,
+          173,
+          174,
+          177,
+          181,
+          210,
+          165,
+          172,
+          362
+        ],
+        "positive_counts": [
+          78,
+          97,
+          79,
+          69,
+          74,
+          84,
+          89,
+          68,
+          130,
+          264
+        ],
+        "negative_counts": [
+          98,
+          98,
+          94,
+          105,
+          103,
+          97,
+          121,
+          97,
+          42,
+          98
+        ],
+        "mean": 4.9793,
+        "median": 5.0,
+        "std": 3.1423,
+        "min": 0.0,
+        "max": 10.0
+      },
+      "Sleep_Duration": {
+        "bins": [
+          "1.5-2.5",
+          "2.5-3.5",
+          "3.5-4.5",
+          "4.5-5.5",
+          "5.5-6.5",
+          "6.5-7.4",
+          "7.4-8.4",
+          "8.4-9.4",
+          "9.4-10.4",
+          "10.4-11.4"
+        ],
+        "bin_edges": [
+          1.5,
+          2.49,
+          3.48,
+          4.47,
+          5.46,
+          6.45,
+          7.44,
+          8.43,
+          9.42,
+          10.41,
+          11.4
+        ],
+        "total_counts": [
+          12,
+          37,
+          153,
+          310,
+          475,
+          468,
+          334,
+          146,
+          44,
+          6
+        ],
+        "positive_counts": [
+          10,
+          27,
+          114,
+          184,
+          218,
+          222,
+          159,
+          67,
+          28,
+          3
+        ],
+        "negative_counts": [
+          2,
+          10,
+          39,
+          126,
+          257,
+          246,
+          175,
+          79,
+          16,
+          3
+        ],
+        "mean": 6.4522,
+        "median": 6.5,
+        "std": 1.5422,
+        "min": 1.5,
+        "max": 11.4
+      },
+      "BMI": {
+        "bins": [
+          "11.9-14.9",
+          "14.9-17.9",
+          "17.9-20.9",
+          "20.9-23.9",
+          "23.9-26.9",
+          "26.9-29.9",
+          "29.9-32.9",
+          "32.9-35.9",
+          "35.9-38.9",
+          "38.9-41.9"
+        ],
+        "bin_edges": [
+          11.9,
+          14.9,
+          17.9,
+          20.9,
+          23.9,
+          26.9,
+          29.9,
+          32.9,
+          35.9,
+          38.9,
+          41.9
+        ],
+        "total_counts": [
+          17,
+          50,
+          181,
+          361,
+          541,
+          453,
+          253,
+          99,
+          26,
+          4
+        ],
+        "positive_counts": [
+          7,
+          25,
+          83,
+          168,
+          264,
+          200,
+          186,
+          77,
+          18,
+          4
+        ],
+        "negative_counts": [
+          10,
+          25,
+          98,
+          193,
+          277,
+          253,
+          67,
+          22,
+          8,
+          0
+        ],
+        "mean": 26.0153,
+        "median": 25.9,
+        "std": 4.5129,
+        "min": 11.9,
+        "max": 41.9
+      },
+      "Lifestyle_Risk_Score": {
+        "bins": [
+          "0.0-0.5",
+          "0.5-1.0",
+          "1.0-1.5",
+          "1.5-2.0",
+          "2.0-2.5",
+          "2.5-3.0",
+          "3.0-3.5",
+          "3.5-4.0",
+          "4.0-4.5",
+          "4.5-5.0"
+        ],
+        "bin_edges": [
+          0.0,
+          0.5,
+          1.0,
+          1.5,
+          2.0,
+          2.5,
+          3.0,
+          3.5,
+          4.0,
+          4.5,
+          5.0
+        ],
+        "total_counts": [
+          140,
+          0,
+          452,
+          0,
+          722,
+          0,
+          493,
+          0,
+          162,
+          16
+        ],
+        "positive_counts": [
+          36,
+          0,
+          174,
+          0,
+          375,
+          0,
+          305,
+          0,
+          130,
+          12
+        ],
+        "negative_counts": [
+          104,
+          0,
+          278,
+          0,
+          347,
+          0,
+          188,
+          0,
+          32,
+          4
+        ],
+        "mean": 2.067,
+        "median": 2.0,
+        "std": 1.0739,
+        "min": 0.0,
+        "max": 5.0
+      }
+    },
+    "categorical_stats": {
+      "BP_History": {
+        "categories": [
+          "Hypertension",
+          "Normal",
+          "Prehypertension"
+        ],
+        "counts": [
+          569,
+          796,
+          620
+        ],
+        "rates": [
+          92.79,
+          35.93,
+          35.16
+        ]
+      },
+      "Medication": {
+        "categories": [
+          "ACE Inhibitor",
+          "Beta Blocker",
+          "Diuretic",
+          "None",
+          "Other"
+        ],
+        "counts": [
+          323,
+          412,
+          245,
+          799,
+          206
+        ],
+        "rates": [
+          49.85,
+          51.94,
+          56.73,
+          51.56,
+          51.46
+        ]
+      },
+      "Family_History": {
+        "categories": [
+          "No",
+          "Yes"
+        ],
+        "counts": [
+          1000,
+          985
+        ],
+        "rates": [
+          38.0,
+          66.19
+        ]
+      },
+      "Exercise_Level": {
+        "categories": [
+          "High",
+          "Low",
+          "Moderate"
+        ],
+        "counts": [
+          391,
+          936,
+          658
+        ],
+        "rates": [
+          54.48,
+          50.43,
+          52.74
+        ]
+      },
+      "Smoking_Status": {
+        "categories": [
+          "Non-Smoker",
+          "Smoker"
+        ],
+        "counts": [
+          1417,
+          568
+        ],
+        "rates": [
+          44.04,
+          71.83
+        ]
+      },
+      "BMI_Category": {
+        "categories": [
+          "Normal",
+          "Obese",
+          "Overweight",
+          "Underweight"
+        ],
+        "counts": [
+          735,
+          357,
+          796,
+          97
+        ],
+        "rates": [
+          47.76,
+          75.07,
+          46.11,
+          47.42
+        ]
+      },
+      "Age_Group": {
+        "categories": [
+          "18-34",
+          "35-49",
+          "50-64",
+          "65+"
+        ],
+        "counts": [
+          534,
+          440,
+          438,
+          573
+        ],
+        "rates": [
+          39.7,
+          39.32,
+          63.47,
+          64.4
+        ]
+      }
+    },
+    "hypertension_rate_per_category": {
+      "BP_History": [
+        {
+          "category": "Hypertension",
+          "total": 569,
+          "hypertensive": 528,
+          "non_hypertensive": 41,
+          "rate_percentage": 92.79
+        },
+        {
+          "category": "Normal",
+          "total": 796,
+          "hypertensive": 286,
+          "non_hypertensive": 510,
+          "rate_percentage": 35.93
+        },
+        {
+          "category": "Prehypertension",
+          "total": 620,
+          "hypertensive": 218,
+          "non_hypertensive": 402,
+          "rate_percentage": 35.16
+        }
+      ],
+      "Medication": [
+        {
+          "category": "Diuretic",
+          "total": 245,
+          "hypertensive": 139,
+          "non_hypertensive": 106,
+          "rate_percentage": 56.73
+        },
+        {
+          "category": "Beta Blocker",
+          "total": 412,
+          "hypertensive": 214,
+          "non_hypertensive": 198,
+          "rate_percentage": 51.94
+        },
+        {
+          "category": "None",
+          "total": 799,
+          "hypertensive": 412,
+          "non_hypertensive": 387,
+          "rate_percentage": 51.56
+        },
+        {
+          "category": "Other",
+          "total": 206,
+          "hypertensive": 106,
+          "non_hypertensive": 100,
+          "rate_percentage": 51.46
+        },
+        {
+          "category": "ACE Inhibitor",
+          "total": 323,
+          "hypertensive": 161,
+          "non_hypertensive": 162,
+          "rate_percentage": 49.85
+        }
+      ],
+      "Family_History": [
+        {
+          "category": "Yes",
+          "total": 985,
+          "hypertensive": 652,
+          "non_hypertensive": 333,
+          "rate_percentage": 66.19
+        },
+        {
+          "category": "No",
+          "total": 1000,
+          "hypertensive": 380,
+          "non_hypertensive": 620,
+          "rate_percentage": 38.0
+        }
+      ],
+      "Exercise_Level": [
+        {
+          "category": "High",
+          "total": 391,
+          "hypertensive": 213,
+          "non_hypertensive": 178,
+          "rate_percentage": 54.48
+        },
+        {
+          "category": "Moderate",
+          "total": 658,
+          "hypertensive": 347,
+          "non_hypertensive": 311,
+          "rate_percentage": 52.74
+        },
+        {
+          "category": "Low",
+          "total": 936,
+          "hypertensive": 472,
+          "non_hypertensive": 464,
+          "rate_percentage": 50.43
+        }
+      ],
+      "Smoking_Status": [
+        {
+          "category": "Smoker",
+          "total": 568,
+          "hypertensive": 408,
+          "non_hypertensive": 160,
+          "rate_percentage": 71.83
+        },
+        {
+          "category": "Non-Smoker",
+          "total": 1417,
+          "hypertensive": 624,
+          "non_hypertensive": 793,
+          "rate_percentage": 44.04
+        }
+      ],
+      "BMI_Category": [
+        {
+          "category": "Obese",
+          "total": 357,
+          "hypertensive": 268,
+          "non_hypertensive": 89,
+          "rate_percentage": 75.07
+        },
+        {
+          "category": "Normal",
+          "total": 735,
+          "hypertensive": 351,
+          "non_hypertensive": 384,
+          "rate_percentage": 47.76
+        },
+        {
+          "category": "Underweight",
+          "total": 97,
+          "hypertensive": 46,
+          "non_hypertensive": 51,
+          "rate_percentage": 47.42
+        },
+        {
+          "category": "Overweight",
+          "total": 796,
+          "hypertensive": 367,
+          "non_hypertensive": 429,
+          "rate_percentage": 46.11
+        }
+      ],
+      "Age_Group": [
+        {
+          "category": "65+",
+          "total": 573,
+          "hypertensive": 369,
+          "non_hypertensive": 204,
+          "rate_percentage": 64.4
+        },
+        {
+          "category": "50-64",
+          "total": 438,
+          "hypertensive": 278,
+          "non_hypertensive": 160,
+          "rate_percentage": 63.47
+        },
+        {
+          "category": "18-34",
+          "total": 534,
+          "hypertensive": 212,
+          "non_hypertensive": 322,
+          "rate_percentage": 39.7
+        },
+        {
+          "category": "35-49",
+          "total": 440,
+          "hypertensive": 173,
+          "non_hypertensive": 267,
+          "rate_percentage": 39.32
+        }
+      ]
+    },
+    "correlation_matrix": {
+      "columns": [
+        "Age",
+        "Salt_Intake",
+        "Stress_Score",
+        "Sleep_Duration",
+        "BMI",
+        "Lifestyle_Risk_Score",
+        "target"
+      ],
+      "values": [
+        [
+          1.0,
+          0.0112,
+          -0.0322,
+          -0.0118,
+          -0.0235,
+          -0.003,
+          0.2107
+        ],
+        [
+          0.0112,
+          1.0,
+          0.0081,
+          0.0204,
+          0.0395,
+          0.0054,
+          0.1144
+        ],
+        [
+          -0.0322,
+          0.0081,
+          1.0,
+          0.0212,
+          0.0114,
+          0.3952,
+          0.1869
+        ],
+        [
+          -0.0118,
+          0.0204,
+          0.0212,
+          1.0,
+          0.0255,
+          -0.2992,
+          -0.1196
+        ],
+        [
+          -0.0235,
+          0.0395,
+          0.0114,
+          0.0255,
+          1.0,
+          0.3657,
+          0.1451
+        ],
+        [
+          -0.003,
+          0.0054,
+          0.3952,
+          -0.2992,
+          0.3657,
+          1.0,
+          0.2685
+        ],
+        [
+          0.2107,
+          0.1144,
+          0.1869,
+          -0.1196,
+          0.1451,
+          0.2685,
+          1.0
+        ]
+      ]
+    },
+    "group_means": {
+      "Age": {
+        "no_hypertension_mean": 46.0797,
+        "hypertension_mean": 54.2762,
+        "difference": 8.1965
+      },
+      "Salt_Intake": {
+        "no_hypertension_mean": 8.2942,
+        "hypertension_mean": 8.751,
+        "difference": 0.4568
+      },
+      "Stress_Score": {
+        "no_hypertension_mean": 4.3683,
+        "hypertension_mean": 5.5436,
+        "difference": 1.1753
+      },
+      "Sleep_Duration": {
+        "no_hypertension_mean": 6.6441,
+        "hypertension_mean": 6.2751,
+        "difference": -0.369
+      },
+      "BMI": {
+        "no_hypertension_mean": 25.3341,
+        "hypertension_mean": 26.6444,
+        "difference": 1.3103
+      },
+      "Lifestyle_Risk_Score": {
+        "no_hypertension_mean": 1.7671,
+        "hypertension_mean": 2.344,
+        "difference": 0.5769
+      }
+    }
+  }
+}
