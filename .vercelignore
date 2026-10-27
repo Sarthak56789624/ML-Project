@@ -1,0 +1,19 @@
+# Vercel Ignore File
+.git
+.github
+node_modules
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+dist
+.env
+.env.local
+*.log
+*.ipynb
+diabetes_prediction_dataset.csv
+cardiocare/backend/cardiocare.db
+cardiocare.db

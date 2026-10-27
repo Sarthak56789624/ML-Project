@@ -20,16 +20,22 @@ def get_dataset_insights() -> Dict[str, Any]:
 
     metrics_path = settings.METRICS_PATH
     if not os.path.exists(metrics_path):
-        # Fallback search
-        alt_path = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-            "..",
-            "ml",
-            "artifacts",
-            "metrics.json",
-        )
-        if os.path.exists(alt_path):
-            metrics_path = alt_path
+        candidates = [
+            os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                "..",
+                "ml",
+                "artifacts",
+                "metrics.json",
+            ),
+            os.path.join(os.getcwd(), "cardiocare", "ml", "artifacts", "metrics.json"),
+            "cardiocare/ml/artifacts/metrics.json",
+            "ml/artifacts/metrics.json",
+        ]
+        for c in candidates:
+            if os.path.exists(c):
+                metrics_path = c
+                break
 
     if os.path.exists(metrics_path):
         with open(metrics_path, "r", encoding="utf-8") as f:

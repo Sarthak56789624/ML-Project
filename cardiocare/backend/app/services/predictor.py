@@ -193,7 +193,7 @@ def predict_patient(patient: PatientInput) -> PredictionResponse:
         feature_set = bundle.get("features", LIFESTYLE_FEATURES)
         routing_explanation = (
             "BP History not specified or unknown; routed to the Lifestyle-focused model "
-            "(ROC-AUC ~0.875) which evaluates cardiovascular risk solely from behavioral and metabolic factors."
+            "(ROC-AUC ~0.740) which evaluates cardiovascular risk solely from behavioral and metabolic factors."
         )
     else:
         raise RuntimeError("No model artifacts are loaded in memory.")

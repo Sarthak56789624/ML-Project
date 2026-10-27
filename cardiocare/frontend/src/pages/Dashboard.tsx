@@ -20,10 +20,10 @@ import {
   TrendingUp,
   BrainCircuit,
   Database,
-  Layers,
   Sparkles,
   PieChart as PieIcon,
   CheckCircle,
+  Droplet,
 } from "lucide-react";
 import { GlassCard } from "../components/GlassCard";
 import { api } from "../lib/api";
@@ -41,12 +41,17 @@ export const Dashboard: React.FC = () => {
     queryFn: api.getDatasetInsights,
   });
 
-  if (loadingMetrics || loadingInsights) {
+  const { data: diabetesMetricsData, isLoading: loadingDiabetes } = useQuery({
+    queryKey: ["diabetesMetrics"],
+    queryFn: api.getDiabetesMetrics,
+  });
+
+  if (loadingMetrics || loadingInsights || loadingDiabetes) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center space-y-4">
         <div className="w-10 h-10 border-4 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto" />
         <h3 className="text-lg font-bold text-slate-800">Loading Population Analytics & Model Curves...</h3>
-        <p className="text-xs text-slate-500">Aggregating 1,985 clinical records and permutation importances...</p>
+        <p className="text-xs text-slate-500">Aggregating clinical cohorts, metrics and permutation importances...</p>
       </div>
     );
   }
@@ -54,6 +59,7 @@ export const Dashboard: React.FC = () => {
   const modelFull = metricsData?.models?.model_full;
   const modelLife = metricsData?.models?.model_lifestyle;
   const datasetStats = insightsData || metricsData?.dataset_stats;
+  const diabMetrics = diabetesMetricsData?.test_metrics;
 
   // 1. Class Balance Pie Data
   const classBalanceData = [
@@ -122,33 +128,33 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         <GlassCard glowColor="teal" className="p-6">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-            <span>FULL MODEL ROC-AUC</span>
+            <span>HYPERTENSION ROC-AUC</span>
             <Sparkles className="w-4 h-4 text-teal-600" />
           </div>
           <div className="text-3xl font-black text-slate-900">
-            {((modelFull?.metrics?.roc_auc || 0.999) * 100).toFixed(1)}%
+            {((modelLife?.metrics?.roc_auc || 0.740) * 100).toFixed(1)}%
           </div>
           <span className="text-[11px] font-semibold text-emerald-600 flex items-center gap-1 mt-1">
-            <CheckCircle className="w-3 h-3" /> Test Accuracy: {((modelFull?.metrics?.accuracy || 0.995) * 100).toFixed(1)}%
+            <CheckCircle className="w-3 h-3" /> Test Accuracy: {Math.round((modelLife?.metrics?.accuracy || 0.72) * 100)}%
           </span>
         </GlassCard>
 
-        <GlassCard glowColor="amber" className="p-6">
+        <GlassCard glowColor="coral" className="p-6">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-            <span>LIFESTYLE ROC-AUC</span>
-            <Layers className="w-4 h-4 text-amber-600" />
+            <span>DIABETES ROC-AUC</span>
+            <Droplet className="w-4 h-4 text-indigo-600" />
           </div>
           <div className="text-3xl font-black text-slate-900">
-            {((modelLife?.metrics?.roc_auc || 0.875) * 100).toFixed(1)}%
+            {((diabMetrics?.roc_auc || 0.977) * 100).toFixed(1)}%
           </div>
-          <span className="text-[11px] font-semibold text-amber-600 mt-1 block">
-            Excludes BP History & Meds
+          <span className="text-[11px] font-semibold text-indigo-600 flex items-center gap-1 mt-1">
+            <CheckCircle className="w-3 h-3" /> Test Accuracy: {((diabMetrics?.accuracy || 0.971) * 100).toFixed(1)}%
           </span>
         </GlassCard>
 
         <GlassCard glowColor="mint" className="p-6">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-            <span>DATASET COHORT</span>
+            <span>HYPERTENSION COHORT</span>
             <Database className="w-4 h-4 text-emerald-600" />
           </div>
           <div className="text-3xl font-black text-slate-900">
@@ -159,14 +165,18 @@ export const Dashboard: React.FC = () => {
           </span>
         </GlassCard>
 
-        <GlassCard glowColor="coral" className="p-6">
+        <GlassCard glowColor="amber" className="p-6">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-            <span>CROSS-VALIDATION</span>
-            <BrainCircuit className="w-4 h-4 text-rose-600" />
+            <span>DIABETES COHORT</span>
+            <BrainCircuit className="w-4 h-4 text-amber-600" />
           </div>
-          <div className="text-3xl font-black text-slate-900">5-Fold</div>
+          <div className="text-3xl font-black text-slate-900">
+            {diabetesMetricsData?.training_samples && diabetesMetricsData?.test_samples
+              ? (diabetesMetricsData.training_samples + diabetesMetricsData.test_samples).toLocaleString()
+              : "96,128"}
+          </div>
           <span className="text-[11px] font-semibold text-slate-500 mt-1 block">
-            RandomizedSearchCV Tuned
+            LightGBM Cross-Validated
           </span>
         </GlassCard>
       </div>
@@ -301,7 +311,7 @@ export const Dashboard: React.FC = () => {
               ROC Curves: Full Model vs Lifestyle Model
             </h3>
             <p className="text-xs text-slate-500 mb-4">
-              Demonstrates the accuracy drop when removing BP_History and Medication (0.999 AUC down to 0.875 AUC).
+              Demonstrates the accuracy drop when removing BP_History and Medication (0.999 AUC down to 0.740 AUC).
             </p>
             <div className="h-72">
               <ResponsiveContainer width="100%" height="100%">
@@ -312,7 +322,7 @@ export const Dashboard: React.FC = () => {
                   <Tooltip />
                   <Legend />
                   <Line type="monotone" dataKey="fullTpr" name="Full Model (AUC 0.999)" stroke="#0EA5A4" strokeWidth={3} dot={false} />
-                  <Line type="monotone" dataKey="lifeTpr" name="Lifestyle Model (AUC 0.875)" stroke="#F59E0B" strokeWidth={2} strokeDasharray="4 4" dot={false} />
+                  <Line type="monotone" dataKey="lifeTpr" name="Lifestyle Model (AUC 0.740)" stroke="#F59E0B" strokeWidth={2} strokeDasharray="4 4" dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -364,42 +374,48 @@ export const Dashboard: React.FC = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-medium">
-              <tr className="hover:bg-teal-50/50">
-                <td className="py-3.5 px-4 font-bold text-slate-900">Tuned Gradient Boosting (Full)</td>
-                <td className="py-3.5 px-4 text-teal-700 font-semibold">BP History + Biometrics</td>
+              <tr className="hover:bg-teal-50/50 transition-colors">
+                <td className="py-3.5 px-4 font-bold text-slate-900">
+                  {modelLife?.model_type || "Logistic Regression (L1 regularization)"}
+                </td>
+                <td className="py-3.5 px-4 text-teal-700 font-semibold">
+                  Lifestyle & Biometrics (No BP Record)
+                </td>
                 <td className="py-3.5 px-4 font-mono font-bold text-emerald-600">
-                  {((modelFull?.metrics?.accuracy || 0.995) * 100).toFixed(1)}%
+                  {Math.round((modelLife?.metrics?.accuracy || 0.72) * 100)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelFull?.metrics?.precision || 1.0) * 100).toFixed(1)}%
+                  {((modelLife?.metrics?.precision || 0.46) * 100).toFixed(1)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelFull?.metrics?.recall || 0.99) * 100).toFixed(1)}%
+                  {((modelLife?.metrics?.recall || 0.696) * 100).toFixed(1)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelFull?.metrics?.f1 || 0.995) * 100).toFixed(1)}%
+                  {(modelLife?.metrics?.f1 || 0.554).toFixed(3)}
                 </td>
                 <td className="py-3.5 px-4 font-mono font-bold text-teal-600">
-                  {((modelFull?.metrics?.roc_auc || 0.999) * 100).toFixed(1)}%
+                  {((modelLife?.metrics?.roc_auc || 0.740) * 100).toFixed(1)}%
                 </td>
               </tr>
-              <tr className="hover:bg-amber-50/50">
-                <td className="py-3.5 px-4 font-bold text-slate-900">Tuned Gradient Boosting (Lifestyle)</td>
-                <td className="py-3.5 px-4 text-amber-700 font-semibold">Lifestyle Only (No BP record)</td>
-                <td className="py-3.5 px-4 font-mono font-bold text-amber-600">
-                  {((modelLife?.metrics?.accuracy || 0.773) * 100).toFixed(1)}%
+              <tr className="hover:bg-indigo-50/50 transition-colors">
+                <td className="py-3.5 px-4 font-bold text-slate-900">
+                  Tuned LightGBM (Diabetes)
+                </td>
+                <td className="py-3.5 px-4 text-indigo-700 font-semibold">HbA1c + Biometrics</td>
+                <td className="py-3.5 px-4 font-mono font-bold text-indigo-600">
+                  {((diabMetrics?.accuracy || 0.971) * 100).toFixed(1)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelLife?.metrics?.precision || 0.781) * 100).toFixed(1)}%
+                  {((diabMetrics?.precision || 0.954) * 100).toFixed(1)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelLife?.metrics?.recall || 0.781) * 100).toFixed(1)}%
+                  {((diabMetrics?.recall || 0.705) * 100).toFixed(1)}%
                 </td>
                 <td className="py-3.5 px-4 font-mono">
-                  {((modelLife?.metrics?.f1 || 0.781) * 100).toFixed(1)}%
+                  {((diabMetrics?.f1_score || 0.811) * 100).toFixed(1)}%
                 </td>
-                <td className="py-3.5 px-4 font-mono font-bold text-amber-600">
-                  {((modelLife?.metrics?.roc_auc || 0.875) * 100).toFixed(1)}%
+                <td className="py-3.5 px-4 font-mono font-bold text-indigo-600">
+                  {((diabMetrics?.roc_auc || 0.977) * 100).toFixed(1)}%
                 </td>
               </tr>
             </tbody>

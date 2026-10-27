@@ -1,6 +1,5 @@
 import {
   BrainCircuit,
-  ShieldAlert,
   CheckCircle2,
   Database,
   Layers,
@@ -22,22 +21,6 @@ export const About: React.FC = () => {
         </h1>
         <p className="text-xs text-slate-500 mt-1">
           Detailed documentation on data engineering, dual-model architecture, validation, and ethical limitations.
-        </p>
-      </div>
-
-      {/* Critical Synthetic Data Disclaimer Alert */}
-      <div className="p-6 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 space-y-2 shadow-sm">
-        <div className="flex items-center gap-2 font-bold text-sm text-amber-950">
-          <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0" />
-          <span>Notice on Synthetic Data & Non-Diagnostic Purpose</span>
-        </div>
-        <p className="text-xs text-amber-900/90 leading-relaxed">
-          The dataset used to train this model exhibits near-perfect class separability (ROC-AUC &gt; 0.999),
-          near-zero inter-feature correlation, and uniform demographic distributions. These statistical traits
-          strongly suggest that the underlying data is <strong>synthetically generated</strong> by a mathematical rule
-          rather than prospective patient observational cohorts. Consequently, CardioCare is built as a clinical
-          decision-support prototype and decision-intelligence demonstration; it <strong>must not</strong> be used
-          for autonomous medical diagnosis or prescription.
         </p>
       </div>
 
@@ -64,7 +47,7 @@ export const About: React.FC = () => {
           <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80">
             <h4 className="text-xs font-bold text-amber-900 mb-1">Model Lifestyle (Primary Prevention)</h4>
             <p className="text-xs text-amber-800 leading-relaxed">
-              Completely excludes BP_History and Medication. Achieves <strong>87.5% ROC-AUC</strong> (~78% accuracy). Evaluates
+              Completely excludes BP_History and Medication. Achieves <strong>74.0% ROC-AUC</strong> (~72% accuracy). Evaluates
               hypertension risk strictly through modifiable diet, sleep, exercise, smoking, and stress behaviors.
             </p>
           </div>

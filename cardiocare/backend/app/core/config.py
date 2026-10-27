@@ -27,14 +27,21 @@ class Settings(BaseSettings):
     API_KEY: Optional[str] = None
     API_KEY_HEADER: str = "X-API-Key"
 
-    # Database
-    DATABASE_URL: str = "sqlite+aiosqlite:///./cardiocare.db"
+    # Database (Uses /tmp on Vercel or serverless read-only environments)
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL",
+        "sqlite+aiosqlite:////tmp/cardiocare.db"
+        if os.getenv("VERCEL")
+        else "sqlite+aiosqlite:///./cardiocare.db"
+    )
 
-    # Artifacts Paths (supports both relative and container environments)
+    # Artifacts Paths (supports relative, container, and serverless environments)
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     ML_ARTIFACTS_DIR: str = os.getenv(
         "ML_ARTIFACTS_DIR",
-        os.path.join(os.path.dirname(BASE_DIR), "ml", "artifacts"),
+        os.path.join(os.path.dirname(BASE_DIR), "ml", "artifacts")
+        if os.path.exists(os.path.join(os.path.dirname(BASE_DIR), "ml", "artifacts"))
+        else os.path.join(os.getcwd(), "cardiocare", "ml", "artifacts"),
     )
 
     @property

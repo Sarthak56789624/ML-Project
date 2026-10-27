@@ -1,5 +1,5 @@
 import { Component, Suspense, lazy, type ErrorInfo, type ReactNode } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -14,9 +14,6 @@ const Dashboard = lazy(() => import("./pages/Dashboard").then((m) => ({ default:
 const BatchPredict = lazy(() => import("./pages/BatchPredict").then((m) => ({ default: m.BatchPredict })));
 const History = lazy(() => import("./pages/History").then((m) => ({ default: m.History })));
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
-const DiabetesAssessment = lazy(() =>
-  import("./pages/DiabetesAssessment").then((m) => ({ default: m.DiabetesAssessment }))
-);
 const NotFound = lazy(() => import("./pages/NotFound").then((m) => ({ default: m.NotFound })));
 
 // Error Boundary Component
@@ -96,7 +93,7 @@ export function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/assessment" element={<Assessment />} />
-                  <Route path="/diabetes" element={<DiabetesAssessment />} />
+                  <Route path="/diabetes" element={<Navigate to="/assessment" replace />} />
                   <Route path="/result" element={<Result />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/batch" element={<BatchPredict />} />

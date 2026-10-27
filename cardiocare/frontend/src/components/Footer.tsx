@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-500 pt-1">
               <ShieldCheck className="w-4 h-4 text-teal-600" />
-              <span>Full Model ROC-AUC: 99.9% | Lifestyle Model ROC-AUC: 87.5%</span>
+              <span>Full Model ROC-AUC: 99.9% | Lifestyle Model ROC-AUC: 74.0%</span>
             </div>
           </div>
 

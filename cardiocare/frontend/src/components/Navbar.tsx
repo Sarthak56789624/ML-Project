@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Activity, Heart, BarChart3, UploadCloud, History, Info, Menu, X, ShieldAlert, Droplet } from "lucide-react";
+import { Activity, Heart, BarChart3, UploadCloud, History, Info, Menu, X, ShieldAlert } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../lib/api";
 
@@ -19,7 +19,6 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { to: "/", label: "Home", icon: Heart },
     { to: "/assessment", label: "Dual Assessment", icon: Activity },
-    { to: "/diabetes", label: "Diabetes AI", icon: Droplet },
     { to: "/dashboard", label: "Insights", icon: BarChart3 },
     { to: "/batch", label: "Batch Screening", icon: UploadCloud },
     { to: "/history", label: "History", icon: History },

@@ -11,7 +11,6 @@ import {
   HeartPulse,
   BrainCircuit,
   TrendingDown,
-  Droplet,
 } from "lucide-react";
 import { GlassCard } from "../components/GlassCard";
 import { useQuery } from "@tanstack/react-query";
@@ -23,13 +22,13 @@ export const Home: React.FC = () => {
     queryFn: api.getModelInfo,
   });
 
-  const fullAcc = modelInfo?.metrics_summary?.model_full?.accuracy
-    ? (modelInfo.metrics_summary.model_full.accuracy * 100).toFixed(1)
-    : "99.5";
+  const lifeAcc = modelInfo?.metrics_summary?.model_lifestyle?.accuracy
+    ? (modelInfo.metrics_summary.model_lifestyle.accuracy * 100).toFixed(0)
+    : "72";
 
   const lifeAuc = modelInfo?.metrics_summary?.model_lifestyle?.roc_auc
     ? (modelInfo.metrics_summary.model_lifestyle.roc_auc * 100).toFixed(1)
-    : "87.5";
+    : "74.0";
 
   return (
     <div className="space-y-24 pb-16">
@@ -74,14 +73,6 @@ export const Home: React.FC = () => {
                 </Link>
 
                 <Link
-                  to="/assessment?mode=diabetes"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-indigo-700 bg-indigo-50/90 hover:bg-indigo-100 border border-indigo-200/80 shadow-xs flex items-center justify-center gap-2 transition-all transform active:scale-95"
-                >
-                  <Droplet className="w-4 h-4 text-indigo-600" />
-                  <span>Diabetes Mode</span>
-                </Link>
-
-                <Link
                   to="/dashboard"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-slate-700 bg-white/80 hover:bg-white border border-slate-200/80 hover:border-slate-300 shadow-xs flex items-center justify-center gap-2 transition-all"
                 >
@@ -93,15 +84,15 @@ export const Home: React.FC = () => {
               {/* Quick Trust Badges */}
               <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/70 max-w-lg mx-auto lg:mx-0 text-left">
                 <div>
-                  <div className="text-2xl font-black text-slate-900">{fullAcc}%</div>
+                  <div className="text-2xl font-black text-slate-900">{lifeAuc}%</div>
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
-                    Full Model Test Acc
+                    Screening ROC-AUC
                   </div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-slate-900">{lifeAuc}%</div>
+                  <div className="text-2xl font-black text-slate-900">{lifeAcc}%</div>
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
-                    Lifestyle ROC-AUC
+                    Screening Test Acc
                   </div>
                 </div>
                 <div>
@@ -190,7 +181,7 @@ export const Home: React.FC = () => {
               Dual-Model Routing
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Equipped with both a Full Model (99.5% accuracy incorporating prior BP records) and an autonomous Lifestyle Model (87.5% ROC-AUC for patients without prior clinical measurements).
+              Equipped with both a Full Model (99.5% accuracy incorporating prior BP records) and an autonomous Lifestyle Model (74.0% ROC-AUC for patients without prior clinical measurements).
             </p>
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-teal-600 gap-1">
               <span>Automatic inference switching</span>
